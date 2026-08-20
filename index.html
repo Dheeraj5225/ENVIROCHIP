@@ -1,65 +1,309 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ml" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modicare Envirochip | സംരക്ഷണം</title>
+    <title>Modicare Envirochip | റേഡിയേഷൻ സംരക്ഷണം</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Anek Malayalam', sans-serif; }
+        body { font-family: 'Anek Malayalam', sans-serif; background-color: #fcfcfc; }
+        
+        /* Hide standard radio button */
+        input[type="radio"] { display: none; }
+        
+        /* Style the label to look like a selectable box */
+        input[type="radio"] + label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background-color: white;
+        }
+        
+        /* Selected state styling */
+        input[type="radio"]:checked + label {
+            border-color: #1e3a8a; /* Blue-900 */
+            background-color: #eff6ff; /* Blue-50 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Custom radio circle */
+        .radio-circle {
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            border: 2px solid #cbd5e1;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        input[type="radio"]:checked + label .radio-circle {
+            border-color: #1e3a8a;
+        }
+        
+        input[type="radio"]:checked + label .radio-circle::after {
+            content: '';
+            width: 0.6rem;
+            height: 0.6rem;
+            background-color: #1e3a8a;
+            border-radius: 50%;
+        }
+
+        /* Popular badge */
+        .popular-badge {
+            background-color: #fbbf24;
+            color: #78350f;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 0.2rem 0.6rem;
+            border-radius: 9999px;
+            position: absolute;
+            top: -0.6rem;
+            left: 1rem;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="text-slate-900 antialiased">
+
+    <!-- Promo Banner -->
+    <div class="bg-blue-900 text-white text-center py-2 text-sm font-semibold tracking-wide">
+        കുടുംബത്തിൻ്റെ ആരോഗ്യത്തിനായി ഇപ്പോൾ തന്നെ സുരക്ഷിതമാക്കൂ!
+    </div>
 
     <!-- Header -->
-    <header class="sticky top-0 bg-white/95 backdrop-blur shadow-sm z-50 p-4 text-center font-bold text-blue-800 border-b">
-        Modicare Envirochip
+    <header class="sticky top-0 bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-blue-900 tracking-tight">Modicare <span class="text-emerald-600">Envirochip</span></h1>
+            <a href="tel:+919447797974" class="text-sm font-bold text-slate-600 hover:text-blue-900 transition flex items-center gap-2">
+                <span>📞 +91 94477 97974</span>
+            </a>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="p-6 text-center bg-blue-50">
-        <h1 class="text-3xl font-extrabold text-blue-900 mb-2">100% റേഡിയേഷൻ സംരക്ഷണം</h1>
-        <p class="text-slate-600 mb-4 text-sm">മൊബൈൽ, വൈഫൈ റേഡിയേഷനിൽ നിന്ന് നിങ്ങളുടെ കുടുംബത്തെ സുരക്ഷിതമാക്കൂ.</p>
-        <div class="w-24 h-24 bg-white rounded-2xl mx-auto shadow-lg flex items-center justify-center font-bold text-blue-700 border-2 border-blue-100 mb-6">E-CHIP</div>
-        <a href="#order" class="block bg-green-600 text-white py-3 rounded-xl font-bold shadow-md">ഇപ്പോൾ ഓർഡർ ചെയ്യാം</a>
-    </section>
+    <!-- Main E-commerce Product Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            
+            <!-- Left Column: Image Gallery -->
+            <div class="flex flex-col gap-4">
+                <!-- Main Image -->
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden aspect-[4/5] sm:aspect-square flex items-center justify-center">
+                    <img id="mainImage" src="WhatsApp%20Image%202026-08-20%20at%2001.57.23.jpeg" alt="Modicare Envirochip" class="w-full h-full object-contain">
+                </div>
+                <!-- Thumbnails -->
+                <div class="grid grid-cols-4 gap-2 sm:gap-4">
+                    <button onclick="changeImage('WhatsApp%20Image%202026-08-20%20at%2001.57.23.jpeg')" class="bg-white border border-gray-200 rounded-xl overflow-hidden aspect-square hover:border-blue-600 transition focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <img src="WhatsApp%20Image%202026-08-20%20at%2001.57.23.jpeg" class="w-full h-full object-cover" alt="Thumb 1">
+                    </button>
+                    <button onclick="changeImage('WhatsApp%20Image%202026-08-20%20at%2001.59.54.jpeg')" class="bg-white border border-gray-200 rounded-xl overflow-hidden aspect-square hover:border-blue-600 transition focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <img src="WhatsApp%20Image%202026-08-20%20at%2001.59.54.jpeg" class="w-full h-full object-cover" alt="Thumb 2">
+                    </button>
+                    <button onclick="changeImage('2254.webp')" class="bg-white border border-gray-200 rounded-xl overflow-hidden aspect-square hover:border-blue-600 transition focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <img src="2254.webp" class="w-full h-full object-cover" alt="Thumb 3">
+                    </button>
+                    <button onclick="changeImage('1111111.jpg')" class="bg-white border border-gray-200 rounded-xl overflow-hidden aspect-square hover:border-blue-600 transition focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <img src="1111111.jpg" class="w-full h-full object-contain p-1" alt="Thumb 4">
+                    </button>
+                </div>
+            </div>
 
-    <!-- Quick Facts -->
-    <section class="p-6">
-        <h2 class="font-bold text-xl mb-4 border-l-4 border-red-500 pl-3">എന്തുകൊണ്ട് എൻവിറോചിപ്പ്?</h2>
-        <div class="space-y-3 text-sm text-slate-700">
-            <p>✅ ബ്രെയിൻ ട്യൂമർ, കാൻസർ സാധ്യത കുറയ്ക്കുന്നു.</p>
-            <p>✅ ഹൃദയാരോഗ്യം സംരക്ഷിക്കുന്നു.</p>
-            <p>✅ പുരുഷന്മാരിലെ ബീജക്ഷമത വർദ്ധിപ്പിക്കുന്നു.</p>
-            <p>✅ സിഗ്നൽ തടസ്സപ്പെടുത്തുന്നില്ല.</p>
+            <!-- Right Column: Product Details & Purchase -->
+            <div class="flex flex-col">
+                <!-- Reviews & Title -->
+                <div class="mb-4">
+                    <div class="flex items-center gap-1 text-yellow-400 text-lg mb-2">
+                        ★★★★★ <span class="text-slate-500 text-sm ml-2 font-medium">(4.9/5 മാക്സ് ഹെൽത്ത്കെയർ സാക്ഷ്യപ്പെടുത്തിയത്)</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-2">Modicare Envirochip</h1>
+                    <p class="text-lg text-slate-600 font-medium">മൊബൈൽ, വൈഫൈ റേഡിയേഷനിൽ നിന്നുള്ള 100% സംരക്ഷണം.</p>
+                </div>
+
+                <!-- Short Benefits -->
+                <div class="bg-slate-50 rounded-xl p-4 mb-8">
+                    <ul class="space-y-2 text-sm text-slate-700 font-medium">
+                        <li class="flex items-center gap-2"><span class="text-emerald-500">✔</span> ബ്രെയിൻ ട്യൂമർ, കാൻസർ സാധ്യത കുറയ്ക്കുന്നു</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500">✔</span> ഹൃദയാരോഗ്യം, പ്രത്യുൽപാദന ശേഷി സംരക്ഷിക്കുന്നു</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500">✔</span> സിഗ്നലുകൾക്ക് തടസ്സമില്ല</li>
+                    </ul>
+                </div>
+
+                <!-- Package Selection -->
+                <div class="mb-6">
+                    <h3 class="font-bold text-slate-900 mb-4">പാക്കേജ് തിരഞ്ഞെടുക്കുക:</h3>
+                    
+                    <div class="space-y-3">
+                        <!-- Option 1 -->
+                        <div class="relative">
+                            <input type="radio" name="package" id="pack1" value="1 എൻവിറോചിപ്പ് (വ്യക്തിഗത പാക്ക്)">
+                            <label for="pack1">
+                                <div class="flex items-center">
+                                    <div class="radio-circle"></div>
+                                    <div class="font-bold text-slate-800">വ്യക്തിഗത പാക്ക് (1 എണ്ണം)</div>
+                                </div>
+                                <div class="text-sm font-semibold text-slate-500">1 ഫോണിന്</div>
+                            </label>
+                        </div>
+
+                        <!-- Option 2 -->
+                        <div class="relative">
+                            <input type="radio" name="package" id="pack4" value="ഫാമിലി പാക്ക് (4 എൻവിറോചിപ്പ്)" checked>
+                            <label for="pack4">
+                                <span class="popular-badge">ഏറ്റവും ജനപ്രിയം</span>
+                                <div class="flex items-center">
+                                    <div class="radio-circle"></div>
+                                    <div class="font-bold text-slate-800">ഫാമിലി പാക്ക് (4 എണ്ണം)</div>
+                                </div>
+                                <div class="text-sm font-semibold text-slate-500">കുടുംബത്തിന് സുരക്ഷ</div>
+                            </label>
+                        </div>
+
+                        <!-- Option 3 -->
+                        <div class="relative">
+                            <input type="radio" name="package" id="pack10" value="ഹോം പാക്ക് (10 എൻവിറോചിപ്പ്)">
+                            <label for="pack10">
+                                <div class="flex items-center">
+                                    <div class="radio-circle"></div>
+                                    <div class="font-bold text-slate-800">ഹോം & ഓഫീസ് (10 എണ്ണം)</div>
+                                </div>
+                                <div class="text-sm font-semibold text-slate-500">360° സംരക്ഷണം</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add to Cart (WhatsApp) Button -->
+                <div class="mt-4 mb-8">
+                    <button onclick="orderViaWhatsApp()" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200 flex justify-center items-center gap-2">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.44A11.96 11.96 0 0012 0a12 12 0 00-10.4 17.9L0 24l6.27-1.64A11.93 11.93 0 0012 24a12 12 0 008.52-20.56zM12 21.98a9.93 9.93 0 01-5.07-1.38l-.36-.21-3.77.99 1.01-3.68-.23-.37A9.97 9.97 0 012 12a10 10 0 0117.07-7.07A10 10 0 0112 21.98zm5.5-7.53c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15s-.78.98-.95 1.18c-.18.2-.35.23-.65.08a8.2 8.2 0 01-2.42-1.5 9 9 0 01-1.67-2.08c-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.64-.93-2.25-.24-.6-.49-.52-.68-.53h-.58c-.2 0-.53.08-.8.38a2.43 2.43 0 00-.77 1.8c0 1.06.63 2.1 1.07 2.68.45.6 3.93 6 9.53 8.42 1.33.58 2.37.93 3.18 1.19a4.8 4.8 0 002.2.14c.73-.1 2.33-.95 2.66-1.87.33-.92.33-1.7.23-1.87-.1-.17-.38-.27-.68-.42z"/></svg>
+                        WhatsApp വഴി ഓർഡർ ചെയ്യുക
+                    </button>
+                    <p class="text-center text-xs text-slate-500 mt-3 flex justify-center items-center gap-2">
+                        <span>🔒 സുരക്ഷിതമായ ഓർഡർ</span> | <span>🚚 ഹോം ഡെലിവറി</span>
+                    </p>
+                </div>
+
+                <!-- Trust / Value Props Grid -->
+                <div class="grid grid-cols-2 gap-4 border-t border-b border-gray-100 py-6">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-blue-100 text-blue-700 w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">✓</div>
+                        <div class="text-xs font-bold text-slate-700 uppercase">ക്ലിനിക്കലി<br>തെളിയിക്കപ്പെട്ടത്</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-blue-100 text-blue-700 w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">👪</div>
+                        <div class="text-xs font-bold text-slate-700 uppercase">കുടുംബത്തിന്<br>സുരക്ഷിതം</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-blue-100 text-blue-700 w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">📶</div>
+                        <div class="text-xs font-bold text-slate-700 uppercase">സിഗ്നൽ<br>കുറയില്ല</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-blue-100 text-blue-700 w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">📱</div>
+                        <div class="text-xs font-bold text-slate-700 uppercase">ഉപയോഗിക്കാൻ<br>എളുപ്പം</div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- Pricing Grid -->
-    <section id="order" class="p-6 bg-slate-100">
-        <h2 class="font-bold text-xl mb-4 text-center">പാക്കേജുകൾ</h2>
-        <div class="grid gap-4">
-            <div class="bg-white p-4 rounded-xl shadow-sm border border-blue-100">
-                <p class="font-bold">വ്യക്തിഗത പാക്ക് (1 Chip)</p>
-                <a href="https://wa.me/919447797974?text=1 എൻവിറോചിപ്പ് ഓർഡർ ചെയ്യണം" class="block mt-2 text-center bg-blue-600 text-white py-2 rounded-lg text-sm font-bold">WhatsApp</a>
+    <!-- Content / Detail Section (Similar to K&F deep dive) -->
+    <section class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="WhatsApp%20Image%202026-08-20%20at%2001.59.54.jpeg" alt="Health Hazards" class="w-full rounded-2xl shadow-2xl">
             </div>
-            <div class="bg-blue-600 p-4 rounded-xl shadow-lg text-white border-2 border-blue-800">
-                <p class="font-bold">ഫാമിലി പാക്ക് (4 Chips) - ജനപ്രിയം</p>
-                <a href="https://wa.me/919447797974?text=ഫാമിലി പാക്ക് (4 എൻവിറോചിപ്പ്) ഓർഡർ ചെയ്യണം" class="block mt-2 text-center bg-white text-blue-700 py-2 rounded-lg text-sm font-bold">WhatsApp</a>
+            <div>
+                <h2 class="text-3xl font-extrabold mb-6">അദൃശ്യമായ റേഡിയേഷൻ വരുത്തിവെക്കുന്ന വിപത്തുകൾ</h2>
+                <p class="text-slate-300 mb-6 text-lg leading-relaxed">
+                    തുടർച്ചയായ റേഡിയേഷൻ നിങ്ങളെയും നിങ്ങളുടെ കുടുംബത്തെയും പലവിധത്തിൽ ബാധിക്കുന്നു. ശാസ്ത്രീയമായി തെളിയിക്കപ്പെട്ട എൻവിറോചിപ്പ് ഉപയോഗിച്ച് ഈ അപകടങ്ങളിൽ നിന്ന് രക്ഷനേടാം.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="text-red-400 text-3xl">🧠</div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-1">ബ്രെയിൻ ട്യൂമർ & കാൻസർ</h4>
+                            <p class="text-slate-400 text-sm">തലച്ചോറിലെയും ഗർഭാശയത്തിലെയും കാൻസർ സാധ്യത വർദ്ധിപ്പിക്കുന്നു.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="text-red-400 text-3xl">👶</div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-1">കുട്ടികൾക്ക് അപകടം</h4>
+                            <p class="text-slate-400 text-sm">കുഞ്ഞുങ്ങളുടെ വളർച്ചയെയും തലച്ചോറിനെയും ദോഷകരമായി ബാധിക്കുന്നു.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="text-red-400 text-3xl">📉</div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-1">പ്രത്യുൽപാദന ശേഷി</h4>
+                            <p class="text-slate-400 text-sm">പുരുഷന്മാരിൽ ബീജത്തിൻ്റെ എണ്ണം ഗണ്യമായി കുറയുന്നു.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bg-white p-4 rounded-xl shadow-sm border border-blue-100">
-                <p class="font-bold">ഹോം പാക്ക് (10 Chips)</p>
-                <a href="https://wa.me/919447797974?text=ഹോം പാക്ക് (10 എൻവിറോചിപ്പ്) ഓർഡർ ചെയ്യണം" class="block mt-2 text-center bg-blue-600 text-white py-2 rounded-lg text-sm font-bold">WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Details Section from image -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">കൂടുതൽ വിവരങ്ങൾ</h2>
+            <div class="grid sm:grid-cols-2 gap-8">
+                <img src="2254.webp" alt="Back details" class="w-full rounded-xl border border-gray-200 shadow-sm">
+                <img src="1111111.jpg" alt="Packaging" class="w-full rounded-xl border border-gray-200 shadow-sm object-contain p-4">
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="p-6 text-center text-xs text-slate-500">
-        <p>📞 +91 94477 97974</p>
-        <p class="mt-2">© 2026 Modicare Consultants</p>
+    <footer class="bg-slate-100 py-10 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h3 class="font-extrabold text-slate-900 text-xl">Modicare Envirochip</h3>
+                <p class="text-slate-500 text-sm mt-1">നിങ്ങളുടെ ആരോഗ്യത്തിൻ്റെ കാവൽക്കാരൻ.</p>
+            </div>
+            <div class="text-slate-600 font-bold">
+                ഫോൺ: +91 94477 97974
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 text-center text-xs text-slate-400">
+            © 2026 Modicare Consultants. All rights reserved.
+        </div>
     </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Function to handle image gallery clicks
+        function changeImage(imageSrc) {
+            document.getElementById('mainImage').src = imageSrc;
+        }
+
+        // Function to dynamically create WhatsApp link based on selected radio button
+        function orderViaWhatsApp() {
+            const phone = "919447797974";
+            const packages = document.getElementsByName('package');
+            let selectedPackage = "എൻവിറോചിപ്പ്"; // Default
+            
+            for (let i = 0; i < packages.length; i++) {
+                if (packages[i].checked) {
+                    selectedPackage = packages[i].value;
+                    break;
+                }
+            }
+            
+            const message = encodeURIComponent(`നമസ്കാരം, എനിക്ക് ${selectedPackage} ഓർഡർ ചെയ്യണം.`);
+            const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
 
 </body>
 </html>
