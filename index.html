@@ -27,8 +27,8 @@
         
         /* Selected state styling */
         input[type="radio"]:checked + label {
-            border-color: #1e3a8a; /* Blue-900 */
-            background-color: #eff6ff; /* Blue-50 */
+            border-color: #1e3a8a;
+            background-color: #eff6ff;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
@@ -74,7 +74,7 @@
 
     <!-- Promo Banner -->
     <div class="bg-blue-900 text-white text-center py-2 text-sm font-semibold tracking-wide">
-        കുടുംബത്തിൻ്റെ ആരോഗ്യത്തിനായി ഇപ്പോൾ തന്നെ സുരക്ഷിതമാക്കൂ!
+        കുടുംബത്തിൻ്റെ ആരോഗ്യത്തിനായി ശാസ്ത്രീയമായി തെളിയിക്കപ്പെട്ട സംരക്ഷണം!
     </div>
 
     <!-- Header -->
@@ -95,6 +95,7 @@
             <div class="flex flex-col gap-4">
                 <!-- Main Image -->
                 <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden aspect-[4/5] sm:aspect-square flex items-center justify-center">
+                    <!-- USING ORIGINAL FILENAMES WITH URL ENCODING -->
                     <img id="mainImage" src="WhatsApp%20Image%202026-08-20%20at%2001.57.23.jpeg" alt="Modicare Envirochip" class="w-full h-full object-contain">
                 </div>
                 <!-- Thumbnails -->
@@ -129,8 +130,8 @@
                 <div class="bg-slate-50 rounded-xl p-4 mb-8">
                     <ul class="space-y-2 text-sm text-slate-700 font-medium">
                         <li class="flex items-center gap-2"><span class="text-emerald-500">✔</span> ബ്രെയിൻ ട്യൂമർ, കാൻസർ സാധ്യത കുറയ്ക്കുന്നു</li>
-                        <li class="flex items-center gap-2"><span class="text-emerald-500">✔</span> ഹൃദയാരോഗ്യം, പ്രത്യുൽപാദന ശേഷി സംരക്ഷിക്കുന്നു</li>
-                        <li class="flex items-center gap-2"><span class="text-emerald-500">✔</span> സിഗ്നലുകൾക്ക് തടസ്സമില്ല</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500">✔</span> സിഗ്നൽ ഡ്രോപ്പ് ഇല്ല, ബാറ്ററിയെ ബാധിക്കില്ല</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500">✔</span> എല്ലാ മൊബൈലുകൾക്കും റൂട്ടറുകൾക്കും അനുയോജ്യം</li>
                     </ul>
                 </div>
 
@@ -188,32 +189,63 @@
                         <span>🔒 സുരക്ഷിതമായ ഓർഡർ</span> | <span>🚚 ഹോം ഡെലിവറി</span>
                     </p>
                 </div>
-
-                <!-- Trust / Value Props Grid -->
-                <div class="grid grid-cols-2 gap-4 border-t border-b border-gray-100 py-6">
-                    <div class="flex items-center gap-3">
-                        <div class="bg-blue-100 text-blue-700 w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">✓</div>
-                        <div class="text-xs font-bold text-slate-700 uppercase">ക്ലിനിക്കലി<br>തെളിയിക്കപ്പെട്ടത്</div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="bg-blue-100 text-blue-700 w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">👪</div>
-                        <div class="text-xs font-bold text-slate-700 uppercase">കുടുംബത്തിന്<br>സുരക്ഷിതം</div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="bg-blue-100 text-blue-700 w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">📶</div>
-                        <div class="text-xs font-bold text-slate-700 uppercase">സിഗ്നൽ<br>കുറയില്ല</div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="bg-blue-100 text-blue-700 w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">📱</div>
-                        <div class="text-xs font-bold text-slate-700 uppercase">ഉപയോഗിക്കാൻ<br>എളുപ്പം</div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Content / Detail Section (Similar to K&F deep dive) -->
+    <!-- NEW: Features & Qualities Section (Highlighting the Product) -->
+    <section class="py-16 bg-blue-50 border-t border-b border-blue-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-blue-900 mb-4">എന്താണ് എൻവിറോചിപ്പിന്റെ പ്രത്യേകതകൾ?</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">വെറുമൊരു സ്റ്റിക്കർ അല്ല, ലോകോത്തര സാങ്കേതികവിദ്യ ഉപയോഗിച്ച് നിർമ്മിച്ച ആധുനിക റേഡിയേഷൻ ഷീൽഡ്.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-white">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-2xl mb-4">🛡️</div>
+                    <h4 class="font-bold text-lg text-slate-900 mb-2">റേഡിയേഷനെ നിർവീര്യമാക്കുന്നു</h4>
+                    <p class="text-slate-600 text-sm">ഇത് റേഡിയേഷൻ തടയുകയല്ല (block) ചെയ്യുന്നത്, പകരം മനുഷ്യശരീരത്തിന് ദോഷകരമല്ലാത്ത രീതിയിൽ അതിനെ നിർവീര്യമാക്കുകയാണ് ചെയ്യുന്നത്.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-white">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl mb-4">📶</div>
+                    <h4 class="font-bold text-lg text-slate-900 mb-2">സിഗ്നലിനെ ബാധിക്കില്ല</h4>
+                    <p class="text-slate-600 text-sm">നിങ്ങളുടെ മൊബൈൽ സിഗ്നൽ സ്ട്രെങ്തിനെയോ വൈഫൈ ഇന്റർനെറ്റ് സ്പീഡിനെയോ ഇത് ഒരു തരത്തിലും കുറയ്ക്കുന്നില്ല.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-white">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-2xl mb-4">💻</div>
+                    <h4 class="font-bold text-lg text-slate-900 mb-2">എല്ലാ ഉപകരണങ്ങൾക്കും</h4>
+                    <p class="text-slate-600 text-sm">മൊബൈൽ ഫോണുകൾ, ലാപ്ടോപ്പുകൾ, ടാബ്‌ലെറ്റുകൾ, വൈ-ഫൈ റൂട്ടറുകൾ എന്നിവയിലെല്ലാം ഇത് എളുപ്പത്തിൽ ഉപയോഗിക്കാം.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Certifications Section -->
+    <section class="py-12 bg-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6">ശാസ്ത്രീയമായി അംഗീകരിക്കപ്പെട്ടത്</h3>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-80 grayscale hover:grayscale-0 transition duration-500">
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl mb-2">🏥</span>
+                    <span class="font-bold text-slate-700 text-sm">Tested by Max Healthcare</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl mb-2">🇬🇧</span>
+                    <span class="font-bold text-slate-700 text-sm">Certified by DB Tech, UK</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl mb-2">🇺🇸</span>
+                    <span class="font-bold text-slate-700 text-sm">Published in US Journals</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content / Detail Section (Health Hazards) -->
     <section class="bg-slate-900 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -243,7 +275,7 @@
                         <div class="text-red-400 text-3xl">📉</div>
                         <div>
                             <h4 class="font-bold text-xl mb-1">പ്രത്യുൽപാദന ശേഷി</h4>
-                            <p class="text-slate-400 text-sm">പുരുഷന്മാരിൽ ബീജത്തിൻ്റെ എണ്ണം ഗണ്യമായി കുറയുന്നു.</p>
+                            <p class="text-slate-400 text-sm">പുരുഷന്മാരിൽ ബീജത്തിൻ്റെ എണ്ണം ഗണ്യമായി കുറയുന്നു. ഹൃദയാരോഗ്യത്തെയും ബാധിക്കുന്നു.</p>
                         </div>
                     </div>
                 </div>
@@ -254,7 +286,8 @@
     <!-- Details Section from image -->
     <section class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-slate-900 mb-8">കൂടുതൽ വിവരങ്ങൾ</h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">എങ്ങനെ ഉപയോഗിക്കാം?</h2>
+            <p class="text-slate-600 mb-8">പിന്നിലെ സ്റ്റിക്കർ മാറ്റി ഫോണിന്റെയോ റൂട്ടറിന്റെയോ മധ്യഭാഗത്തായി ഒട്ടിക്കുക മാത്രം ചെയ്താൽ മതി.</p>
             <div class="grid sm:grid-cols-2 gap-8">
                 <img src="2254.webp" alt="Back details" class="w-full rounded-xl border border-gray-200 shadow-sm">
                 <img src="1111111.jpg" alt="Packaging" class="w-full rounded-xl border border-gray-200 shadow-sm object-contain p-4">
